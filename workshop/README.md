@@ -1,29 +1,25 @@
-# Full Workshop Title
-
-## Module Source Link
-
-Link the source Learn module here
+# Predicting harvest cycles
 
 ## Goals
 
 In this workshop, we will discuss *insert your topic*.
 
-| **Goal**              | *describe the goal of the workshop*                                    |
+| **Goal**              | *Predicting the optimum time to harvest crops using ML models trained by data captured by IoT devices*                                    |
 | ----------------------------- | --------------------------------------------------------------------- |
-| **What will you learn**       | *describe your learning goals*                                        |
-| **What you'll need**          | *link all the necessary tooling, subscriptions, and downloads needed* |
-| **Duration**                  | *specify the duration*                                                                |
-| **Microsoft Cloud Topics taught**                  | *M365, Azure, GitHub, other?*                                                                |
+
+| **What you'll need**          | *[Azure subscription](https://azure.microsoft.com/en-in/), latest version of [Python](https://www.python.org/) and a [Github account](https://github.com/)* |
+| **Duration**                  | *1 hour*                                                                |
+| **Microsoft Cloud Topics taught**                  | *Azure IoT Hub, Azure ML*                                                                |
 | **Just want to try the app or see the solution?** | *an optional link to the completed project sample app or solution folder*                          |
-| **Slides** | [Powerpoint](slides.pptx) 
-                         
+| **Slides** | [Powerpoint](slides.pptx)
+
 ## Video
 
 Embed your Train the Trainer video here. Instructions on how to create a great video experience is [available on this page](../video-guidance.md).
 
 ## Pre-Learning
 
-*add a link to Microsoft Learn for students to pre-learn the topic, if possible*
+[Introduction to Azure IoT Hub](https://docs.microsoft.com/en-gb/learn/modules/introduction-to-iot-hub/?WT.mc_id=Portal-Microsoft_Azure_Marketplace)
 
 ## Prerequisites
 
@@ -69,21 +65,8 @@ text
 
 link
 
-## Quiz or Code Challenge
-
-Link to quiz or challenge on Learn
-
-## Next steps
-
-*links to Microsoft Learn to further learning progress, and/or a path to certifications*
-
-## Practice
-
-*suggest, or add as an addendum, a way to extend students knowledge of the topic by creating a new app or demo that builds on the original workshop materials.*
-
 ## Feedback
 
 Be sure to give [feedback about this workshop](https://forms.office.com/r/MdhJWMZthR)!
 
 [Code of Conduct](../CODE_OF_CONDUCT.md)
-
