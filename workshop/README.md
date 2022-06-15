@@ -2,7 +2,7 @@
 
 ## Goals
 
-In this workshop, we will discuss *insert your topic*.
+In this workshop, we will discuss **about the complexities of agriculture and make a simple prediction about the optimum time to harvest crops**.
 
 | **Goal**              | *Predicting the optimum time to harvest crops using ML models trained by data captured by IoT devices*                                    |
 | ----------------------------- | --------------------------------------------------------------------- |
@@ -19,11 +19,14 @@ Embed your Train the Trainer video here. Instructions on how to create a great v
 
 ## Pre-Learning
 
-[Introduction to Azure IoT Hub](https://docs.microsoft.com/en-gb/learn/modules/introduction-to-iot-hub/?WT.mc_id=Portal-Microsoft_Azure_Marketplace)
+- [Introduction to Azure IoT Hub](https://docs.microsoft.com/en-gb/learn/modules/introduction-to-iot-hub/?WT.mc_id=Portal-Microsoft_Azure_Marketplace)
+- [Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning)
+- [Resource Groups](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)
 
 ## Prerequisites
 
-*any installations that will be helpful, any hardware or software needed*
+- [Azure](https://azure.microsoft.com/en-in/) account
+- [Nodejs](https://nodejs.org/en/download/)
 
 ## What students will learn
 
@@ -35,31 +38,31 @@ Example: Have you ever wanted to visit a museum virtually or explore its collect
 
 ![image of completed project](images/placeholder.png)
 
-## Milestone 1 (example)
+## Get setup by provisioning the necessary resources on Azure.
 
 In this segment, you'll query an API at the Metropolitan Museum of Art
 
 [link to Learn module area](link)
 
-## Milestone 2
+## Add and connect IoT devices to your hub
 
 text
 
 link
 
-## Milestone 3
+## Send data from IoT devices for analysis
 
 text
 
 link
 
-## Milestone 4
+## Extract data from hub
 
 text
 
 link
 
-## Milestone 5
+## Develop a model and make a prediction
 
 text
 

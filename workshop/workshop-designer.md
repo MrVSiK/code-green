@@ -17,4 +17,4 @@ By the end of this workshop, you will be skilled at analysing data received from
 2. Add and connect IoT devices to your hub
 3. Send data from IoT devices for analysis
 4. Extract data from hub
-5. Develop a model and predict the ideal time
+5. Develop a model and make a prediction
