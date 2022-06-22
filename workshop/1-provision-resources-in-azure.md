@@ -21,7 +21,7 @@ Once you have logged into [Azure](https://portal.azure.com) you can follow the f
 
 The resource group will be created.
 
-## Provisioning resource groups
+## Provisioning resources
 
 1. Navigate to the **cropML** resource group page. It should look something like the image given below.
 
@@ -29,4 +29,11 @@ The resource group will be created.
 
 2. Click on the **Create resources** button.
 
-3.
+3. Search for **IoT Hub** by **Microsoft**. Give it a name of **cropIOT** and fill in the other details and create it.
+
+4. Next, search for **Azure Machine Learning** by **Microsoft**. Give it a name of **cropWorkspace** and fill in the other details and create it.
+
+5. Lastly, search for **Storage Account** by **Microsoft**. Give it a name of **cropstorage** and fill in the other details and create it.
+
+
+Now that all the resources have been provisioned, we can move onto [connecting IoT devices to the hub.](./2-add-and-connect-IoT-devices.md)
