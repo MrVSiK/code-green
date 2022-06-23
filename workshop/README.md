@@ -6,7 +6,6 @@ In this workshop, we will discuss **about the complexities of agriculture and ma
 
 | **Goal**              | *Predicting the optimum time to harvest crops using ML models trained by data captured by IoT devices*                        |
 | ----------------------------- | --------------------------------------------------------------------- |
-
 | **What you'll need** | *[Azure subscription](https://azure.microsoft.com/en-in/), latest version of [Python](https://www.python.org/) and a [Github account](https://github.com/)*|
 | **Duration** | *1 hour* |
 | **Microsoft Cloud Topics taught** | *Azure IoT Hub, Azure ML* |
