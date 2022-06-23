@@ -14,7 +14,7 @@ const ProvisioningDeviceClient = require('azure-iot-provisioning-device').Provis
 
 // String containing Hostname, Device Id & Device Key in the following formats:
 //  'HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>'
-let deviceConnectionString = "<connection string>";
+let deviceConnectionString = "HostName=code-green.azure-devices.net;DeviceId=temperature_sensor;SharedAccessKey=ARVjdCNlBvuNNSDggFrvfmf28xbovoMVrNFela7lups=";
 
 // DPS connection information
 const provisioningHost = process.env.IOTHUB_DEVICE_DPS_ENDPOINT ||'global.azure-devices-provisioning.net';
@@ -34,7 +34,7 @@ let intervalToken3;
 
 class TemperatureSensor {
   constructor() {
-    this.currTemp = 1 + (Math.random() * 90);
+    this.currTemp = Math.floor(Math.random() * (50 - 5) + 5);
     this.maxTemp = this.currTemp;
     this.minTemp = this.currTemp;
     this.cumulativeTemperature = this.currTemp;
@@ -45,7 +45,7 @@ class TemperatureSensor {
     return { temperature: this.currTemp };
   }
   updateSensor() {
-    this.currTemp = 1 + (Math.random() * 90);
+    this.currTemp = Math.floor(Math.random() * (50 - 5) + 5);
     this.cumulativeTemperature += this.currTemp;
     this.numberOfTemperatureReadings++;
     if (this.currTemp > this.maxTemp) {
@@ -265,12 +265,10 @@ async function main() {
     client.onDeviceMethod(commandNameReboot, commandHandler);
 
     // Send Telemetry 300 times
-    for(let i = 0; i<300; i++){
+    setTimeout(() => {
       const data = JSON.stringify(thermostat1.updateSensor().getCurrentTemperatureObject());
-      setTimeout(() => {
-        sendTelemetry(client, data, i, thermostat1ComponentName).catch((err) => console.log('error ', err.toString()));
-      }, 100)
-    }
+      sendTelemetry(client, data, 0, thermostat1ComponentName).catch((err) => console.log('error ', err.toString()));
+    }, 0)
 
     // attach a standard input exit listener
     exitListener(client);

@@ -6,7 +6,7 @@ In this workshop, we will discuss **about the complexities of agriculture and ma
 
 | **Goal**              | *Predicting the optimum time to harvest crops using ML models trained by data captured by IoT devices*                        |
 | ----------------------------- | --------------------------------------------------------------------- |
-| **What you'll need** | *[Azure subscription](https://azure.microsoft.com/en-in/), latest version of [Python](https://www.python.org/) and a [Github account](https://github.com/)*|
+| **What you'll need** | *[Azure subscription](https://azure.microsoft.com/en-in/), latest version of [Node.js](https://nodejs.org/en/) and a [Github account](https://github.com/)*|
 | **Duration** | *1 hour* |
 | **Microsoft Cloud Topics taught** | *Azure IoT Hub, Azure ML* |
 | **Slides** | [Powerpoint](slides.pptx) |
@@ -28,43 +28,43 @@ Embed your Train the Trainer video here. Instructions on how to create a great v
 
 ## What students will learn
 
-*In this area, describe the scenario and intended solution, paraphrasing what is in the module or creating a brief description here*
+**According to the United Nations Food and Agriculture Organization, over three-quarters of the food humans consume comes from just 12 plants and five animal sources, with just three crops — wheat, rice, and corn — accounting for 51% of the calories consumed in the diet.**
 
-Example: Have you ever wanted to visit a museum virtually or explore its collections right from your home computer? In this workshop, use an API, or Application Programming Interface, to learn more about a museum collection.
+**With the increasing use of harmful fertilizers and global warming, harvest cycles have become harder to predict**
 
-*add a screenshot of the completed project*
+In this workshop, we try to understand what factors affect the growth cycle of a crop and work with sensors which are frequently used to gather data about everything from the pH value of the soil to the temperature.
 
-![image of completed project](images/placeholder.png)
+We will use this data to make a simple prediction about the optimum harvest time.
 
 ## Get setup by provisioning the necessary resources on Azure.
 
-In this segment, you'll query an API at the Metropolitan Museum of Art
+In this segment, you will create a resource group and provision the necessary resources in it.
 
-[link to Learn module area](link)
+[Manage Azure resource groups by using the Azure portal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)
 
 ## Add and connect IoT devices to your hub
 
-text
+In this segment, we will create IoT devices and understand the different authentication methods used by IoT hub to connect to the IoT devices.
 
-link
+[IoT concepts and Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-concepts-and-iot-hub)
 
 ## Send data from IoT devices for analysis
 
-text
+In this segment, we will create a sensor using the Node.js SDK and send data to our IoT hub.
 
-link
+[Quickstart: Send telemetry from an IoT Plug and Play device to Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-develop/quickstart-send-telemetry-iot-hub?toc=%2Fazure%2Fiot-hub%2Ftoc.json&bc=%2Fazure%2Fiot-hub%2Fbreadcrumb%2Ftoc.json&pivots=programming-language-nodejs)
 
 ## Extract data from hub
 
-text
+In this segment, we will create a route and an endpoint for the telemetry messages sent by our IoT devices.
 
-link
+[Use IoT Hub message routing to send device-to-cloud messages to different endpoints](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-d2c)
 
 ## Develop a model and make a prediction
 
-text
+In this segment, we will create datasets using the files stored in the containers of the Azure Blob Storage and use it to predict harvest times.
 
-link
+[Create data assets](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-create-register-data-assets?tabs=CLI)
 
 ## Feedback
 

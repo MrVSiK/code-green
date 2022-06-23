@@ -14,7 +14,7 @@ const ProvisioningDeviceClient = require('azure-iot-provisioning-device').Provis
 
 // String containing Hostname, Device Id & Device Key in the following formats:
 //  'HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>'
-let deviceConnectionString = "<connection string>";
+let deviceConnectionString = "HostName=code-green.azure-devices.net;DeviceId=soil_sensor;SharedAccessKey=D5M56/ndG+e+L23CZ7W8HgoxkXrBHe9j2kPzdxAeBzE=";
 
 // DPS connection information
 const provisioningHost = process.env.IOTHUB_DEVICE_DPS_ENDPOINT ||'global.azure-devices-provisioning.net';
@@ -34,31 +34,33 @@ let intervalToken3;
 
 class SoilSensor {
   constructor() {
-    this.currentNitrogenLevel = 1 + (Math.random() * 10);
-    this.currentPhosphorusLevel = 1 + (Math.random() * 10);
-    this.currentSulphurLevel = 1 + (Math.random() * 10);
+    this.currentNitrogenLevel = Math.floor(Math.random() * (141 - 0) + 0);
+    this.currentPhosphorusLevel = Math.floor(Math.random() * (150 - 0) + 0);
+    this.currentPotassiumLevel = Math.floor(Math.random() * (210 - 5) + 5);
+    this.pH = Math.random() * (10 - 3.5) + 3.5;
     this.cumulativeNitrogenLevel = this.currentNitrogenLevel;
     this.cumulativePhosphorusLevel = this.currentPhosphorusLevel;
-    this.cumulativeSulphurLevel = this.currentSulphurLevel;
+    this.cumulativePotassiumLevel = this.currentPotassiumLevel;
     this.startTime = (new Date(Date.now())).toISOString();
     this.numberOfSoilReadings = 1;
     this.maxNitrogenLevel = this.currTemp;
     this.minNitrogenLevel = this.currTemp;
     this.maxPhosphoruslevel = this.currTemp;
     this.minPhosphoruslevel = this.currTemp;
-    this.maxSulphurlevel = this.currTemp;
-    this.minSulphurlevel = this.currTemp;
+    this.maxPotassiumlevel = this.currTemp;
+    this.minPotassiumlevel = this.currTemp;
   }
   getCurrentSoilObject() {
-    return { nitrogen: this.currentNitrogenLevel, phosphorus: this.currentPhosphorusLevel, sulphur: this.cumulativeSulphurLevel };
+    return { nitrogen: this.currentNitrogenLevel, phosphorus: this.currentPhosphorusLevel, potassium: this.cumulativePotassiumLevel, ph: this.pH };
   }
   updateSensor() {
-    this.currentNitrogenLevel = 1 + (Math.random() * 10);
-    this.currentphosphorusLevel = 1 + (Math.random() * 10);
-    this.currentSulphurLevel = 1 + (Math.random() * 10);
+    this.currentNitrogenLevel = Math.floor(Math.random() * (141 - 0) + 0);
+    this.currentPhosphorusLevel = Math.floor(Math.random() * (150 - 0) + 0);
+    this.currentPotassiumLevel = Math.floor(Math.random() * (210 - 5) + 5);
+    this.pH = Math.random() * (10 - 3.5) + 3.5;
     this.cumulativeNitrogenLevel = this.currentNitrogenLevel;
     this.cumulativePhosphorusLevel = this.currentPhosphorusLevel;
-    this.cumulativeSulphurLevel = this.currentSulphurLevel;
+    this.cumulativePotassiumLevel = this.currentPotassiumLevel;
     this.numberOfSoilReadings++;
     return this;
   }
@@ -70,15 +72,15 @@ class SoilSensor {
       maxPhosphorusLevel: this.maxPhosphoruslevel,
       minPhosphorusLevel: this.minPhosphorusTemp,
       averagePhosphorusLevel: this.cumulativePhosphorusLevel / this.numberOfSoilReadings,
-      maxSulphurLevel: this.maxSulphurlevel,
-      minSulphurLevel: this.minSulphurlevel,
-      averageSulphurLevel: this.cumulativeSulphurLevel / this.numberOfSoilReadings,
+      maxPotassiumLevel: this.maxPotassiumlevel,
+      minPotassiumLevel: this.minPotassiumlevel,
+      averagePotassiumLevel: this.cumulativePotassiumLevel / this.numberOfSoilReadings,
       endTime: (new Date(Date.now())).toISOString(),
       startTime: this.startTime
     };
   }
   getMaxSoilValue() {
-    return (this.maxNitrogenLevel + this.maxPhosphoruslevel + this.maxSulphurlevel)/3
+    return (this.maxNitrogenLevel + this.maxPhosphoruslevel + this.maxPotassiumlevel)/3
   }
 }
 
@@ -276,13 +278,11 @@ async function main() {
     client.onDeviceMethod(commandNameGetMaxMinReport1, commandHandler);
     client.onDeviceMethod(commandNameReboot, commandHandler);
 
-    // Send Telemetry 300 times
-    for(let i = 0; i<300; i++){
-      const data = JSON.stringify(soilSensor.updateSensor().getCurrentSoilObject());
+    // Send Telemetry
+    const data = JSON.stringify(soilSensor.updateSensor().getCurrentSoilObject());
       setTimeout(() => {
-        sendTelemetry(client, data, i, soilComponentName).catch((err) => console.log('error ', err.toString()));
-      }, 100)
-    }
+        sendTelemetry(client, data, 0, soilComponentName).catch((err) => console.log('error ', err.toString()));
+    }, 0)
 
     // attach a standard input exit listener
     exitListener(client);

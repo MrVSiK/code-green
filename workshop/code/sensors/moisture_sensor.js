@@ -14,7 +14,7 @@ const ProvisioningDeviceClient = require('azure-iot-provisioning-device').Provis
 
 // String containing Hostname, Device Id & Device Key in the following formats:
 //  'HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>'
-let deviceConnectionString = "<connection string>";
+let deviceConnectionString = "HostName=code-green.azure-devices.net;DeviceId=moisture_sensor;SharedAccessKey=+vQ7cq3GMhbeqiJp5VdaIp8KOSAtwusz3ck3zyHJCkg=";
 
 // DPS connection information
 const provisioningHost = process.env.IOTHUB_DEVICE_DPS_ENDPOINT ||'global.azure-devices-provisioning.net';
@@ -34,7 +34,8 @@ let intervalToken3;
 
 class MoistureSensor {
   constructor() {
-    this.currLevel = 1 + (Math.random() * 10);
+    this.currLevel = Math.floor(Math.random() * (100 - 14) + 14);
+    this.rainfall = Math.floor(Math.random() * (300 - 20) + 20);
     this.maxLevel = this.currLevel;
     this.minLevel = this.currLevel;
     this.cumulativeLevel = this.currLevel;
@@ -42,10 +43,11 @@ class MoistureSensor {
     this.numberOfReadings = 1;
   }
   getCurrentLevelObject() {
-    return { level: this.currLevel };
+    return { humidity: this.currLevel, rainfall: this.rainfall };
   }
   updateSensor() {
-    this.currLevel = 1 + (Math.random() * 90);
+    this.currLevel = Math.floor(Math.random() * (100 - 14) + 14);
+    this.rainfall = Math.floor(Math.random() * (300 - 20) + 20);
     this.cumulativeLevel += this.currLevel;
     this.numberOfReadings++;
     if (this.currLevel > this.maxLevel) {
@@ -264,13 +266,11 @@ async function main() {
     client.onDeviceMethod(commandNameGetMaxMinReport1, commandHandler);
     client.onDeviceMethod(commandNameReboot, commandHandler);
 
-    // Send Telemetry 300 times
-    for(let i = 0; i<300; i++){
-      const data = JSON.stringify(moistureSensor.updateSensor().getCurrentLevelObject());
-      setTimeout(() => {
-        sendTelemetry(client, data, i, moistureSensorComponentName).catch((err) => console.log('error ', err.toString()));
-      }, 100)
-    }
+    // Send Telemetry
+    const data = JSON.stringify(moistureSensor.updateSensor().getCurrentLevelObject());
+    setTimeout(() => {
+      sendTelemetry(client, data, 0, moistureSensorComponentName).catch((err) => console.log('error ', err.toString()));
+    }, 0)
 
     // attach a standard input exit listener
     exitListener(client);
