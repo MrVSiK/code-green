@@ -10,8 +10,8 @@ In this workshop, we will discuss **about the complexities of agriculture and ma
 | **What you'll need**          | *[Azure subscription](https://azure.microsoft.com/en-in/), latest version of [Python](https://www.python.org/) and a [Github account](https://github.com/)* |
 | **Duration**                  | *1 hour*                                                                |
 | **Microsoft Cloud Topics taught**                  | *Azure IoT Hub, Azure ML*                                                                |
-| **Just want to try the app or see the solution?** | *an optional link to the completed project sample app or solution folder*                          |
-| **Slides** | [Powerpoint](slides.pptx)
+| **Just want to try the app or see the solution?** | *an optional link to the completed project sample app or solution folder*                         |
+| **Slides** | [Powerpoint](slides.pptx) |
 
 ## Video
 
