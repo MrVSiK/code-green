@@ -4,7 +4,7 @@
 
 In this workshop, we will discuss **about the complexities of agriculture and make a simple prediction about the optimum time to harvest crops**.
 
-| **Goal**              | *Predicting the optimum time to harvest crops using ML models trained by data captured by IoT devices*                                    |
+| **Goal**              | *Predicting the optimum time to harvest crops using ML models trained by data captured by IoT devices*                        |
 | ----------------------------- | --------------------------------------------------------------------- |
 
 | **What you'll need**          | *[Azure subscription](https://azure.microsoft.com/en-in/), latest version of [Python](https://www.python.org/) and a [Github account](https://github.com/)* |
