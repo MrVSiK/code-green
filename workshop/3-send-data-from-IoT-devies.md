@@ -37,3 +37,5 @@ Data received by IoT hub is stored in the form of JSON documents called **Device
 | **Phosphorus** | *Ratio of Phosphorous content in soil*|
 | **Potassium** | *Ratio of Potassium content in soil*|
 | **pH** |  *ph value of the soil*|
+
+Now that we can send data to the hub, we can move onto learning [how to extract the data.](./4-extract-data-from-IoT-hub.md)
