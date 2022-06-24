@@ -2,13 +2,11 @@
 
 ## Stage 1: Desired Results
 
-By the end of this workshop, you will be skilled at analysing data received from IoT devices and use Azure IoT hub. You will also be able to choose the right model for prediction by comparing the pros and cons of each model.
+By the end of this workshop, you will be skilled at sending data from IoT devices and extracting data from Azure IoT hub. You will also be able to use Machine Learning Studio and work with datasets and datastores.
 
 ## Stage 2: Evidence
 
-> List any evaluative criteria and Assessment Evidence. Students will demonstrate their understanding of the concepts by doing the following:
-
-1. Performance Tasks (these are tasks that a student can complete to demonstrate comprehension, such as a quiz or code challenge)
+1. Students will demonstrate their ability by successfully creating an IoT hub, sending data to the hub and extracting data from the hub. A quiz is also included at the end of each milestone section in the slides.
 
 ## Stage 3: Learning Plan
 

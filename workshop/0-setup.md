@@ -22,10 +22,6 @@ Let's start by creating a new repository for this project on GitHub, and then op
 
 `node -v`
 
-## Turn on AutoSave
-
-One of the best productivity features in github.dev and Visual Studio Code is **AutoSave**. AutoSave automatically saves changes to your files, so you don't have to worry about losing any of your work. To turn on AutoSave, select the three parallel lines icon on the left-hand side of your github.dev window in the Activity Bar. Go to **File > AutoSave**. Your AutoSave is turned on if there is a check mark next to the AutoSave menu item.
-
 ## Summary and next step
 
 Congratulations! You have the tools you need to begin working with IoT hub. Next, let's [provision some resources](./1-provision-resources-in-azure.md).
