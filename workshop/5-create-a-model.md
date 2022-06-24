@@ -40,6 +40,6 @@ You can create a model in Azure Machine Learning or use a model built from an op
 
 11. Ensure that the `Dataset.get_by_name` function gets right dataset passed as variable.
 
-12. Clear the existing JSON files from blob storage and the codes for all 3 sensors.
+12. Clear the existing JSON files from blob storage.
 
 13. Following the above step, you can run **crop.ipynb** to get a prediction.
